@@ -1,0 +1,19 @@
+version: "2.1"
+
+services:
+  server:
+    image: softwarecraftsmen/atlassian-plugin-sdk-confluence:${ATLASSIAN_PLUGIN_SDK_TAG}
+    build: ./
+    ports:
+      - ${CONFLUENCE_HTTP_PORT}:1990
+    volumes:
+      - ${PLUGIN_PROJECT_DIR}:/project
+    working_dir: /project
+    stop_grace_period: 1m0s
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://server:1990/"]
+      timeout: 5s
+
+volumes:
+  dot_m2:
+    external: true
