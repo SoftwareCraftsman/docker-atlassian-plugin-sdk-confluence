@@ -14,9 +14,11 @@ eval `docker-machine env atlassian` <3>
 2. Start the docker machine
 3. Setup the docker client to use the docker-machine
 
+
+
 ## Run a Plugin SDK instance
 
 ```sh
 docker pull softwarecraftsmen/atlassian-plugin-sdk-confluence
-docker run -it --name sdk-confluence  atlassian-plugin-sdk-confluence
+docker run -ti -v dot_m2:/root/.m2 -v <plugin-project-directory>:/project -w /project -p 11990:1990 --hostname confluence softwarecraftsmen/atlassian-plugin-sdk-confluence
 ```
