@@ -1,7 +1,7 @@
 FROM softwarecraftsmen/atlassian-plugin-sdk
 MAINTAINER Software Craftsmen GmbH und CoKG <office@software-craftsmen.at>
 
-ENV JAVA_OPTS="-Xms1024m -Xmx5120m -DskipAllPrompts=true"
+ENV JAVA_OPTS="-Xms1024m -Xmx5120m"
 
 EXPOSE 1990
 
