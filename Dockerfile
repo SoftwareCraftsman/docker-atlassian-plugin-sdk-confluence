@@ -1,4 +1,4 @@
-FROM softwarecraftsmen/atlassian-plugin-sdk
+FROM softwarecraftsmen/atlassian-plugin-sdk:8.6.2
 MAINTAINER Software Craftsmen GmbH und CoKG <office@software-craftsmen.at>
 
 ENV JAVA_OPTS="-Xms1024m -Xmx5120m"
